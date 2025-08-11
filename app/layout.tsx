@@ -7,10 +7,10 @@ import BackButtonInjector from "@/components/back-button-injector"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "GameHub - Play Amazing Web Games",
+  title: "Zaam - Play Amazing Web Games",
   description:
     "Discover and play the best web games across different categories including Action, Puzzle, Racing, and Arcade games.",
-    generator: 'GameHub'
+    generator: 'Zaam'
 }
 
 export default function RootLayout({

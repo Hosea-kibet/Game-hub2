@@ -371,7 +371,7 @@ export default function GamingWebsite() {
     setCountdown(3)
 
     // Store the current game in localStorage for the back button
-    localStorage.setItem("gameHubReturnUrl", window.location.href)
+    localStorage.setItem("ZaamReturnUrl", window.location.href)
     localStorage.setItem("currentGame", JSON.stringify(game))
 
     // Start countdown
@@ -381,7 +381,7 @@ export default function GamingWebsite() {
           clearInterval(timer)
           // Redirect to game with return parameter
           const gameUrl = new URL(game.link)
-          gameUrl.searchParams.set("returnTo", "gamehub")
+          gameUrl.searchParams.set("returnTo", "zaam")
           window.location.href = gameUrl.toString()
           return 0
         }
@@ -399,12 +399,12 @@ export default function GamingWebsite() {
   const playNow = () => {
     if (currentGame) {
       // Store the current game in localStorage for the back button
-      localStorage.setItem("gameHubReturnUrl", window.location.href)
+      localStorage.setItem("ZaamReturnUrl", window.location.href)
       localStorage.setItem("currentGame", JSON.stringify(currentGame))
 
       // Redirect to game with return parameter
       const gameUrl = new URL(currentGame.link)
-      gameUrl.searchParams.set("returnTo", "gamehub")
+      gameUrl.searchParams.set("returnTo", "zaam")
       window.location.href = gameUrl.toString()
     }
   }
@@ -463,7 +463,7 @@ export default function GamingWebsite() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Gamepad2 className="h-8 w-8 text-purple-400" />
-              <h1 className="text-2xl font-bold text-white">GameHub</h1>
+              <h1 className="text-2xl font-bold text-white">Zaam</h1>
             </div>
             <nav className="hidden md:flex space-x-6">
               {categories.map((category) => (
@@ -786,7 +786,7 @@ export default function GamingWebsite() {
             </div>
 
             <p className="text-xs text-slate-500 mt-4">Game will open in the same window</p>
-            <p className="text-xs text-slate-400 mt-1">Look for the "Back to GameHub" button while playing</p>
+            <p className="text-xs text-slate-400 mt-1">Look for the "Back to Zaam" button while playing</p>
           </div>
         </div>
       )}
@@ -797,9 +797,9 @@ export default function GamingWebsite() {
           <div className="text-center text-slate-400">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <Gamepad2 className="h-6 w-6 text-purple-400" />
-              <span className="text-xl font-bold text-white">GameHub</span>
+              <span className="text-xl font-bold text-white">Zaam</span>
             </div>
-            <p>&copy; 2024 GameHub. All rights reserved. Play responsibly!</p>
+            <p>&copy; 2024 Zaam. All rights reserved. Play responsibly!</p>
             <p className="text-sm mt-2">{gamesData.length} games available to play</p>
           </div>
         </div>

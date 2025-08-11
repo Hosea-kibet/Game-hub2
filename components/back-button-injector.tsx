@@ -6,15 +6,15 @@ export default function BackButtonInjector() {
   useEffect(() => {
     // Check if we're on a game site and should show the back button
     const urlParams = new URLSearchParams(window.location.search)
-    const isFromGameHub = urlParams.get("returnTo") === "gamehub"
+    const isFromZaam = urlParams.get("returnTo") === "Zaam"
 
-    if (isFromGameHub) {
+    if (isFromZaam) {
       // Create and inject the back button
       const backButton = document.createElement("div")
-      backButton.id = "gamehub-back-button"
+      backButton.id = "zaam-back-button"
       backButton.innerHTML = `
         <button 
-          onclick="window.location.href = localStorage.getItem('gameHubReturnUrl') + '?returnFrom=game'"
+          onclick="window.location.href = localStorage.getItem('zaamReturnUrl') + '?returnFrom=game'"
           style="
             position: fixed;
             top: 20px;
@@ -43,7 +43,7 @@ export default function BackButtonInjector() {
             <path d="m12 19-7-7 7-7"/>
             <path d="M19 12H5"/>
           </svg>
-          Back to GameHub
+          Back to zaam
         </button>
       `
 
@@ -52,7 +52,7 @@ export default function BackButtonInjector() {
 
       // Cleanup function
       return () => {
-        const existingButton = document.getElementById("gamehub-back-button")
+        const existingButton = document.getElementById("zaam-back-button")
         if (existingButton) {
           existingButton.remove()
         }
